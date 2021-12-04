@@ -32,8 +32,10 @@ let start = async (chatId) => {
             console.log(user.numTel);
             console.log(numf);
             await bot.sendMessage(chatId, 'Будь ласка, очікуйте. Перевіряємо існування гаманця')
-            const browser = await puppeteer.launch({executablePath: '/usr/bin/chromium-browser'})
-            const browser = await puppeteer.launch({headless:true, args: [ '--ignore-certificate-errors', "--no-sandbox"]});
+            const browser = await puppeteer.launch({executablePath: '/usr/bin/chromium-browser',
+                                                    headless:true, 
+                                                    args: [ '--ignore-certificate-errors', "--no-sandbox"]})
+
             const page = await browser.newPage();
             await page.goto('https://www.masterpass.com.ua/DeleteAccount.aspx');
             await page.click('#btnForgotPwd')
