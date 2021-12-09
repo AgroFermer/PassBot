@@ -102,7 +102,7 @@ let start = async (chatId) => {
             
           }
 
-          if(text != '/start' && isNaN(numf) == true) {
+          if(text != '/start' && isNaN(numf) == true && text.length != 9 && text.length != 6) {
               await bot.sendMessage(chatId, 'Я тебе не розумію. Введи номер телефону без 380')
           }
         
